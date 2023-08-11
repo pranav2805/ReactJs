@@ -34,13 +34,15 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      {expenses.forEach((item) => {
-        <ExpenseItem
-          title={item.title}
-          amount={item.amount}
-          date={item.date}
-          location={item.location}
-        />;
+      {expenses.map((item) => {
+        return (
+          <ExpenseItem
+            title={item.title}
+            amount={item.amount}
+            date={item.date}
+            location={item.location}
+          />
+        );
       })}
       {/* <ExpenseItem
         title={expenses[0].title}
