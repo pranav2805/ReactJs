@@ -37,7 +37,7 @@ const ExpenseItem = (props) => {
       <ExpenseDate date={props.date} />
       <ExpenseDetails amount={amount} location={props.location} title={title} />
       <button onClick={clickHandler}>Change</button>
-      <button onClick={amountUpdateHandler}>Update amount</button>
+      {/* <button onClick={amountUpdateHandler}>Update amount</button> */}
     </Card>
   );
 };
