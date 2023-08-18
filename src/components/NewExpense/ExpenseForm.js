@@ -3,22 +3,54 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 function ExpenseForm() {
-  const [enteredTitle, setEnteredTitle] = useState("");
+  // const [enteredTitle, setEnteredTitle] = useState("");
+  // const [enteredAmount, setEnteredAmount] = useState("");
+  // const [enteredDate, setEnteredDate] = useState("");
+
+  //using only one state instead of 3 states for all 3 input values
+  const [userInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate: "",
+  });
 
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
-  };
+    // setEnteredTitle(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
 
-  const [enteredAmount, setEnteredAmount] = useState("");
+    //safer way to use when the current state depends on previous state as it'll guarantee that the prev state is latest and updated one
+    setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value };
+    });
+  };
 
   const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    // setEnteredAmount(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: event.target.value,
+    // });
+
+    //safer way to use when the current state depends on previous state as it'll guarantee that the prev state is latest and updated one
+    setUserInput((prevState) => {
+      return { ...prevState, enteredAmount: event.target.value };
+    });
   };
 
-  const [enteredDate, setEnteredDate] = useState("");
-
   const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
+    // setEnteredDate(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
+
+    //safer way to use when the current state depends on previous state as it'll guarantee that the prev state is latest and updated one
+    setUserInput((prevState) => {
+      return { ...prevState, enteredDate: event.target.value };
+    });
   };
 
   return (
