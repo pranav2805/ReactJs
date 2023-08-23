@@ -6,9 +6,9 @@ import Card from "../UI/Card";
 
 const ExpenseItem = (props) => {
   // const locOfExpense = "Mumbai";
-  const month = props.date.toLocaleString("en-US", { month: "long" });
-  const day = props.date.toLocaleString("en-US", { day: "2-digit" });
-  const year = props.date.getFullYear();
+  // const month = props.date.toLocaleString("en-US", { month: "long" });
+  // const day = props.date.toLocaleString("en-US", { day: "2-digit" });
+  // const year = props.date.getFullYear();
 
   // function clickHandler(id) {
   //   // console.log(id);
@@ -33,12 +33,18 @@ const ExpenseItem = (props) => {
   }
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <ExpenseDetails amount={amount} location={props.location} title={title} />
-      <button onClick={clickHandler}>Change</button>
-      {/* <button onClick={amountUpdateHandler}>Update amount</button> */}
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <ExpenseDetails
+          amount={amount}
+          location={props.location}
+          title={title}
+        />
+        <button onClick={clickHandler}>Change</button>
+        {/* <button onClick={amountUpdateHandler}>Update amount</button> */}
+      </Card>
+    </li>
   );
 };
 
