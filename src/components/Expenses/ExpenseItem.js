@@ -25,19 +25,19 @@ const ExpenseItem = (props) => {
     console.log(title);
   }
 
-  const [amount, setAmount] = useState(props.amount);
+  // const [amount, setAmount] = useState(props.amount);
 
-  function amountUpdateHandler() {
-    setAmount(amount + 100);
-    console.log("amount updated!!");
-  }
+  // function amountUpdateHandler() {
+  //   setAmount(amount + 100);
+  //   console.log("amount updated!!");
+  // }
 
   return (
     <li>
       <Card className="expense-item">
         <ExpenseDate date={props.date} />
         <ExpenseDetails
-          amount={amount}
+          amount={props.amount}
           location={props.location}
           title={title}
         />
